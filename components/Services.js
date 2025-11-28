@@ -1,6 +1,17 @@
+"use client";
+
+import { useEffect, useRef } from 'react';
 import styles from './Services.module.css';
 
 export default function Services() {
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        if (containerRef.current) {
+            containerRef.current.scrollLeft = 0;
+        }
+    }, []);
+
     const services = [
         {
             title: 'Design',
@@ -37,7 +48,7 @@ export default function Services() {
 
     return (
         <section className={styles.services}>
-            <div className={styles.container}>
+            <div className={styles.container} ref={containerRef}>
                 {services.map((service, index) => (
                     <div key={index} className={`${styles.card} ${service.highlight ? styles.highlight : ''}`}>
                         <h3 className={styles.title}>{service.title}</h3>

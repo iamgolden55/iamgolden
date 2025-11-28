@@ -79,22 +79,33 @@
 @media (max-width: 768px) {
     .services {
         padding: 60px 0;
-        overflow-x: scroll;
-        -webkit-overflow-scrolling: touch;
     }
 
     .container {
         display: flex;
-        padding: 0 20px;
-        width: auto;
+        padding: 0 20px 20px 20px;
+        /* Add bottom padding */
+        width: 100%;
         max-width: none;
-        gap: 1px;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Hide scrollbar for cleaner look */
+    }
+
+    .container::-webkit-scrollbar {
+        display: none;
     }
 
     .card {
         min-width: 85vw;
         flex-shrink: 0;
         padding: 40px 30px;
+        scroll-snap-align: start;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Add border since gap trick might not work well with flex */
     }
 
     .title {
