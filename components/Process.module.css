@@ -1,0 +1,50 @@
+.process {
+    padding: 120px 0;
+    background: var(--background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 60px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--foreground);
+}
+
+.line {
+    flex-grow: 1;
+    height: 1px;
+    background: #ddd;
+}
+
+.headline {
+    font-family: var(--font-serif, serif);
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 400;
+    max-width: 900px;
+    margin-bottom: 30px;
+    color: var(--foreground);
+}
+
+.subtext {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 2.5rem;
+    }
+}

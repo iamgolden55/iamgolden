@@ -1,0 +1,106 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.02) 0%, transparent 70%);
+}
+
+.content {
+    max-width: 900px;
+    animation: fadeIn 1s ease-out;
+}
+
+.headline {
+    font-size: 5rem;
+    line-height: 1.1;
+    font-weight: 400;
+    /* Lighter weight for serif/elegant look */
+    margin-bottom: 50px;
+    letter-spacing: -0.04em;
+    color: #111;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    text-shadow: none;
+    font-family: var(--font-serif, serif);
+    /* Use serif if available, or fallback */
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.cta {
+    background: transparent;
+    color: #fff;
+    padding: 18px 40px;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: conic-gradient(from 0deg, transparent 0 300deg, #ff0000 320deg, #00ff00 340deg, #0000ff 360deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+    z-index: -2;
+    opacity: 1;
+    animation: rotate 2s linear infinite;
+}
+
+.cta::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #111;
+    border-radius: 40px;
+    z-index: -1;
+}
+
+.cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}

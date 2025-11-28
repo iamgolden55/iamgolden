@@ -1,0 +1,30 @@
+.hero {
+    padding: 180px 0 100px;
+    background: var(--background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.headline {
+    font-family: var(--font-serif, serif);
+    font-size: 5.5rem;
+    line-height: 1.1;
+    font-weight: 400;
+    color: var(--foreground);
+    letter-spacing: -0.02em;
+    max-width: 900px;
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 3.5rem;
+    }
+
+    .hero {
+        padding: 140px 0 60px;
+    }
+}

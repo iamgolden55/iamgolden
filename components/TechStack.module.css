@@ -1,0 +1,40 @@
+.stack {
+    padding: 100px 0;
+    background: var(--background);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.headline {
+    font-family: var(--font-serif, serif);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--foreground);
+    font-weight: 400;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.item {
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.item:hover {
+    border-color: var(--foreground);
+    color: var(--foreground);
+    background: rgba(0, 0, 0, 0.02);
+}
